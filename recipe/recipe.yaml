@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: DracoPy
-  version: "2.0.0"
+  version: "2.2.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,13 +10,13 @@ package:
 
 source:
   url: https://github.com/seung-lab/DracoPy/archive/refs/tags/${{ version }}.tar.gz
-  sha256: bfa3f8b67d4ef004e5ba70ffcd9f4541839cf8453a205efbb091c8cb00bad074
+  sha256: 860d71d3986b9a7983f5972e4914655f886cddec36e720bf07f115721e744709
   patches:
     # Remove once upstream supports linking against an installed Draco library.
     - patches/0001-use-system-draco.patch
 
 build:
-  number: 1
+  number: 0
   script: python -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
