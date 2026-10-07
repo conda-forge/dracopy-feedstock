@@ -12,7 +12,8 @@ source:
   url: https://github.com/seung-lab/DracoPy/archive/refs/tags/${{ version }}.tar.gz
   sha256: 860d71d3986b9a7983f5972e4914655f886cddec36e720bf07f115721e744709
   patches:
-    # Remove once upstream supports linking against an installed Draco library.
+    # Remove once upstream supports external Draco instead of building its submodule:
+    # https://github.com/seung-lab/DracoPy/blob/2.2.0/setup.py
     - patches/0001-use-system-draco.patch
 
 build:
@@ -57,5 +58,6 @@ about:
   license_file: LICENSE
 
 extra:
+  feedstock-name: dracopy
   recipe-maintainers:
     - jeongseok-meta
